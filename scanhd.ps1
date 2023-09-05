@@ -6,12 +6,19 @@
 
 
 
-$drive="f:\"
+$drive="e:\"
 $magicWord1 = "windows"
 $magicWord2 = "microsoft"
 $magicWord3 = "program files"
+$magicWord4="BackupData"
+$magicWord5="WindowsApps"
+$magicWord6="SteamLibrary"
+$magicWord7="games"
+$magicWord7="games"
+
 $codePath="D:\FileRecovery\"
 $tempPath="D:\FileRecovery\tmp\"
+
 ############################################
 try{
 
@@ -30,15 +37,19 @@ try{
     foreach ($file in $files)
     {
     
-        
-        if($file.FullName -match $magicWord1  -or $file.FullName -match $magicWord2 -or $file.FullName -match $magicWord3)
-        {
-            Write-Output ("Exclude :" + $file.FullName)
-            continue
-        }
+        try{
+            if($file.FullName -match $magicWord1  -or $file.FullName -match $magicWord2 -or $file.FullName -match $magicWord3 -or $file.FullName -match $magicWord4 -or $file.FullName -match $magicWord5 -or $file.FullName -match $magicWord6 -or $file.FullName -match $magicWord7)
+            {
+                #Write-Output ("Exclude :" + $file.FullName)
+                continue
+            }
 
-        Write-Output ("Include file name:" + $file.FullName)
-        Copy-Item -Path $file.FullName -Destination $tempPath
+            Write-Output ("Include file name:" + $file.FullName)
+            Copy-Item -Path $file.FullName -Destination $tempPath
+        }
+        catch{
+            Write-Host "An error occurred:"+$error[0] + "  "+ $file.FullName  # continue if error example:he cloud file provider is not running.
+        }   
     }
 
 }
