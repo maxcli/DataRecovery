@@ -15,7 +15,7 @@ $tempPath="D:\FileRecovery\tmp\"
 ############################################
 try{
 
-    #throw "Test Error"
+    
 
     Remove-Item  $tempPath -Force  -Recurse -ErrorAction SilentlyContinue
     New-Item -Path $codePath -Name "tmp" -ItemType "directory"
