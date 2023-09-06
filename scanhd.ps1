@@ -14,7 +14,7 @@ $magicWord4="BackupData"
 $magicWord5="WindowsApps"
 $magicWord6="SteamLibrary"
 $magicWord7="games"
-$magicWord7="games"
+
 
 $codePath="D:\FileRecovery\"
 $tempPath="D:\FileRecovery\tmp\"

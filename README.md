@@ -1,9 +1,7 @@
 # DataRecovery
-Powershell script to recover important files from  Windows Drives
+
+scanhd.ps1 : Powershell script for Retrieving Important Files
 
 Edit  $drive="f:\" to point to the source drive.
-
-First, take ownership of drive
-RK drive/properties/security/advanced/change permission
-Owner/change pcmain/peter  (from whoami)
+Recomended to take ownership of drive (properties/security/advanced) 
 
